@@ -1,14 +1,15 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="MobileApp.Views.AboutPage"
-             xmlns:vm="clr-namespace:MobileApp.ViewModels"
-             Title="{Binding Title}">
-    
+<ContentPage
+    x:Class="MobileApp.Views.AboutPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:vm="clr-namespace:MobileApp.ViewModels"
+    Title="{Binding Title}">
+
     <ContentPage.BindingContext>
         <vm:AboutViewModel />
     </ContentPage.BindingContext>
-    
+
     <ContentPage.Resources>
         <ResourceDictionary>
             <Color x:Key="Accent">#96d1ff</Color>
@@ -23,15 +24,15 @@
         <ScrollView Grid.Row="1">
             <StackLayout Margin="20">
                 <StackLayout Orientation="Horizontal">
-                <Label 
-                    FontSize="25"
-                    Text="Good Morning!" 
-                    TextColor="Black" />
-                <Label 
-                    FontSize="15"
-                    Text="Weather" 
-                    TextColor="Black" 
-                    HorizontalOptions="EndAndExpand"/>
+                    <Label
+                        FontSize="25"
+                        Text="Good Morning!"
+                        TextColor="Black" />
+                    <Label
+                        FontSize="15"
+                        HorizontalOptions="EndAndExpand"
+                        Text="Weather"
+                        TextColor="Black" />
                 </StackLayout>
                 <Label
                     FontSize="45"
@@ -43,105 +44,44 @@
                         <RowDefinition Height="180" />
                         <RowDefinition Height="180" />
                     </Grid.RowDefinitions>
-                    <Button 
-                        HorizontalOptions="FillAndExpand" 
-                        VerticalOptions="FillAndExpand" 
-                        CornerRadius="10" 
-                        BackgroundColor="CadetBlue" 
-                        x:Name="Calculator" 
-                        Grid.Row="0" 
-                        Grid.Column="0" 
-                        Margin="5"
-                        Clicked="Calculator_Clicked"/>
-                    <Button 
-                        HorizontalOptions="FillAndExpand" 
-                        VerticalOptions="FillAndExpand" 
-                        CornerRadius="10" 
-                        BackgroundColor="SkyBlue" 
-                        x:Name="Pedometer" 
-                        Grid.Row="0" 
-                        Grid.Column="1" 
-                        Margin="5"
-                        Clicked="Pedometer_Clicked"/>
-                    <Button 
-                        HorizontalOptions="FillAndExpand" 
-                        VerticalOptions="FillAndExpand" 
-                        CornerRadius="10" 
-                        BackgroundColor="YellowGreen" 
-                        x:Name="Time_reminder" 
-                        Grid.Row="1" 
-                        Grid.Column="0" 
-                        Margin="5"
-                        Clicked="Time_reminder_Clicked"/>
-                    <Button 
-                        Text=""
-                        HorizontalOptions="FillAndExpand" 
-                        VerticalOptions="FillAndExpand" 
-                        CornerRadius="10" 
-                        BackgroundColor="SeaGreen" 
-                        x:Name="Device_status" 
-                        Grid.Row="1" 
-                        Grid.Column="1" 
-                        Margin="5"
-                        Clicked="Device_status_Clicked"/>
-                    <Label
+                    <Button
+                        x:Name="Calculator"
                         Grid.Row="0"
                         Grid.Column="0"
-                        Margin="15">
-                        <Label.FormattedText>
-                            <FormattedString>
-                                <Span
-                                    FontSize="15"
-                                    Text="Calculator"
-                                    TextColor="White" />
-                            </FormattedString>
-                        </Label.FormattedText>
-                    </Label>
-                    <Label
+                        BackgroundColor="CadetBlue"
+                        Clicked="Calculator_Clicked"
+                        Style="{StaticResource Button1}"
+                        Text="Calculator" />
+                    <Button
+                        x:Name="Pedometer"
                         Grid.Row="0"
                         Grid.Column="1"
-                        Margin="15">
-                        <Label.FormattedText>
-                            <FormattedString>
-                                <Span
-                                    FontSize="15"
-                                    Text="Pedometer"
-                                    TextColor="White" />
-                            </FormattedString>
-                        </Label.FormattedText>
-                    </Label>
-                    <Label
+                        BackgroundColor="SkyBlue"
+                        Clicked="Pedometer_Clicked"
+                        Style="{StaticResource Button1}"
+                        Text="Pedometer" />
+                    <Button
+                        x:Name="Time_reminder"
                         Grid.Row="1"
                         Grid.Column="0"
-                        Margin="15">
-                        <Label.FormattedText>
-                            <FormattedString>
-                                <Span
-                                    FontSize="15"
-                                    Text="Time reminder"
-                                    TextColor="White" />
-                            </FormattedString>
-                        </Label.FormattedText>
-                    </Label>
-                    <Label
+                        BackgroundColor="YellowGreen"
+                        Clicked="Time_reminder_Clicked"
+                        Style="{StaticResource Button1}"
+                        Text="Time reminder" />
+                    <Button
+                        x:Name="Device_status"
                         Grid.Row="1"
                         Grid.Column="1"
-                        Margin="15">
-                        <Label.FormattedText>
-                            <FormattedString>
-                                <Span
-                                    FontSize="15"
-                                    Text="Device status"
-                                    TextColor="White" />
-                            </FormattedString>
-                        </Label.FormattedText>
-                    </Label>
+                        BackgroundColor="SeaGreen"
+                        Clicked="Device_status_Clicked"
+                        Style="{StaticResource Button1}"
+                        Text="Device status" />
                     <Image
                         Grid.Row="0"
                         Grid.Column="0"
                         Margin="5"
                         HorizontalOptions="End"
-                        Source="yoga.png"
+                        Source=""
                         VerticalOptions="EndAndExpand"
                         WidthRequest="60" />
                     <Image
@@ -149,7 +89,7 @@
                         Grid.Column="1"
                         Margin="5"
                         HorizontalOptions="End"
-                        Source="yoga.png"
+                        Source=""
                         VerticalOptions="EndAndExpand"
                         WidthRequest="60" />
                     <Image
@@ -157,7 +97,7 @@
                         Grid.Column="0"
                         Margin="5"
                         HorizontalOptions="End"
-                        Source="yoga.png"
+                        Source=""
                         VerticalOptions="EndAndExpand"
                         WidthRequest="60" />
                     <Image
@@ -165,7 +105,7 @@
                         Grid.Column="1"
                         Margin="5"
                         HorizontalOptions="End"
-                        Source="yoga.png"
+                        Source=""
                         VerticalOptions="EndAndExpand"
                         WidthRequest="60" />
 
